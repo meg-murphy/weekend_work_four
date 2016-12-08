@@ -3,6 +3,20 @@
 # bonus: returns a string of all missing letters as a string. ex: find_missing_letter("ace") would return "bd", write your own test.
 
 def find_missing_letter(range)
+  range_array = range.split("")
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  alphabet_array = alphabet.split("")
+
+  index = alphabet_array.index(range_array[0])
+
+  alphabet_array = alphabet_array.slice(index..26)
+
+  for i in 0..range_array.length
+    if alphabet_array[i] != range_array[i]
+      return alphabet_array[i]
+    end
+  end
+  return nil
 
 end
 
